@@ -1,42 +1,20 @@
-import {SafeAreaView, StyleSheet, Text, ScrollView} from 'react-native';
+import React from "react"
+import {createStackNavigator} from '@react-navigation/stack'
+import {NavigationContainer} from '@react-navigation/native'
+import Home from './screens/Home'
+import Despesas from './screens/Despesas'
+import Receitas from './screens/Receitas'
 
-export default function App() {
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
-          <Text style={{fontSize: 100}}>
-              EU SOU O SENAI
-          </Text>
-          <Text style={{fontSize: 60}}>
-              EU SOU O SENAI
-          </Text>
-          <Text style={{fontSize: 60}}>
-              EU SOU O SENAI
-          </Text>
-          <Text style={{fontSize: 60}}>
-              EU SOU O SENAI
-          </Text>
-          <Text style={{fontSize: 60}}>
-              EU SOU O SENAI
-          </Text>
-          <Text style={{fontSize: 60}}>
-              EU SOU O SENAI
-          </Text>
-          <Text style={{fontSize: 60}}>
-              EU SOU O SENAI
-          </Text>
-          <Text style={{fontSize: 60}}>
-              EU SOU O SENAI
-          </Text>
-      </ScrollView>
-    </SafeAreaView>
-  );
+const Stack = createStackNavigator();
+
+export default function() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Home">
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="Despesas" component={Despesas} />
+                <Stack.Screen name="Receitas" component={Receitas} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'stretch'
-  },
-});

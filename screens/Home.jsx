@@ -1,19 +1,26 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { StyleSheet, View, Text, Button, SafeAreaView } from 'react-native';
+import Dados from "../context/DadosContext";
 
 export default function ({ navigation }) {
+    const {receitas, despesas} = useContext(Dados)
+
     return (
         <SafeAreaView style={css.container}>
             <View style={css.wrapper}>
                 <View style={css.titleWrapper}>
                     <View>
                         <Text style={css.titulo}>Despesas</Text>
-                        <Text style={css.subtitle}>R$1.000,00</Text>
+                        <Text style={css.subtitle}>
+                            {despesas.reduce((soma, item) => soma + parseInt(item.valor), 0)}
+                        </Text>
                     </View>
 
                     <View>
                         <Text style={css.titulo}>Receitas</Text>
-                        <Text style={css.subtitle}>R$1.000,00</Text>
+                        <Text style={css.subtitle}>
+                            {receitas.reduce((soma, item) => soma + parseInt(item.valor), 0)}
+                        </Text>
                     </View>
                 </View>
 

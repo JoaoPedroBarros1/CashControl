@@ -1,7 +1,27 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import { StyleSheet, View, Text, Button, SafeAreaView, TextInput } from 'react-native';
 
+import Dados from "../context/DadosContext";
+
 export default function ({ navigation }) {
+    const {despesas, setDespesas} = useContext(Dados)
+
+    const [nome, setNome] = useState("")
+    const [valor, setValor] = useState("")
+    const [data, setData] = useState("")
+
+    function cadastrar() {
+        let aux = [...despesas]
+        aux.push({
+            nome: nome,
+            valor: valor,
+            data: data
+        })
+        setDespesas(aux)
+
+        navigation.navigate("Home")
+    }
+
     return (
         <SafeAreaView style={css.container}>
             <Text style={css.titulo}>Despesas</Text>
@@ -9,21 +29,37 @@ export default function ({ navigation }) {
             <View style={css.inputWrapper}>
                 <View>
                     <Text>Nome</Text>
-                    <TextInput style={css.input} />
+                    <TextInput
+                        value={nome}
+                        onChangeText={(e) => setNome(e)}
+                        style={css.input}
+                        placeholder="Informe o nome"
+                    />
                 </View>
 
                 <View>
                     <Text>Valor</Text>
-                    <TextInput style={css.input} keyboardType="numeric" />
+                    <TextInput
+                        value={valor.toString()}
+                        onChangeText={(e) => setValor(e)}
+                        style={css.input}
+                        placeholder="Informe o valor"
+                        keyboardType="numeric"
+                    />
                 </View>
 
                 <View>
                     <Text>Data</Text>
-                    <TextInput style={css.input} />
+                    <TextInput
+                        value={data.toString()}
+                        onChangeText={(e) => setData(e)}
+                        style={css.input}
+                        placeholder="Informe a data"
+                    />
                 </View>
             </View>
 
-            <Button title="Cadastrar" onPress={() => navigation.navigate('Home')} />
+            <Button title="Cadastrar" onPress={cadastrar} />
         </SafeAreaView>
     );
 }

@@ -82,8 +82,8 @@ export default function () {
         <View
             style={{
                 paddingVertical: 30,
-                backgroundColor: '#FFFFFF',
                 flex: 1,
+                marginBottom: 50
             }}>
             <View
                 style={{

@@ -29,7 +29,6 @@ export default function ({ navigation }) {
                 <Text style={styles.transactionTitle}>Receitas</Text>
                 <FlatList
                     data={receitas}
-                    keyExtractor={(item) => item.index}
                     renderItem={({ item }) => (
                         <View style={styles.transactionItem}>
                             <Text style={styles.transactionDescription}>{item.description}</Text>
@@ -44,10 +43,9 @@ export default function ({ navigation }) {
                 <Text style={styles.transactionTitle}>Despesas</Text>
                 <FlatList
                     data={despesas}
-                    keyExtractor={(item) => item.index}
                     renderItem={({ item }) => (
                         <View style={styles.transactionItem}>
-                            <Text style={styles.transactionDescription}>{item.description}</Text>
+                            <Text style={styles.transactionDescription}>{item.nome}</Text>
                             <Text style={styles.expense}>- R$ {item.valor}</Text>
                         </View>
                     )}

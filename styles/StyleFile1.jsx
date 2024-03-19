@@ -2,26 +2,38 @@ import {StyleSheet} from 'react-native';
 export const css = StyleSheet.create({
 
     //  INICIO DO HEADER
-    divheader:{
-        flexDirection: "row",
-        //justifyContent: "space-around",
-        alignItems: "center",
-    },
-    imglogo:{
-        resizeMode: "contain",
+    imglogo1:{
         width: 100,
+        height: 100
+    },
+    imglogo2:{
+        width: 150,
+        height: 70,
+        marginBottom: 20
+    },
+    divheader:{
+        marginTop: 10,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-around"
     },
 
     //  INICIO DA MAIN
     divmain: {
-        marginTop: 180,
+        marginTop: 100,
         alignItems: "center"
+    },
+    txtnome:{
+        fontSize: 22,
+        marginBottom: 10,
     },
     nomeagencia:{
         flexDirection: "row",
-        justifyContent:"space-evenly"
+        gap:30,
+        justifyContent:"space-evenly",
     },
     txtBtn:{
+        fontSize: 18,
         color: "#F0F8FF"
     },
     btnmain:{
@@ -39,23 +51,38 @@ export const css = StyleSheet.create({
     txt:{
         fontSize:16,
     },
-
 //  INICIO DO FOOTER
+    imgfooter:{
+        width: 70,
+        height: 70,
+        alignItems: "center",
+        marginBottom: 15,
+    },
     divfooter:{
         flexDirection: "row",
-        justifyContent: "space-around",
-        alignItems: "center",
+        justifyContent: "space-evenly",
+        marginTop: 60,
     },
-    btnatalho:{
+    btnatalho1:{
+        alignItems: "center",
         padding: 10,
         borderWidth: 1,
         borderColor: "black",
         borderRadius:10,
+        backgroundColor: "#DCDCDC",
+    },
+    btnatalho2:{
+        alignItems: "center",
+        padding: 10,
+        borderWidth: 1,
+        borderColor: "black",
+        borderRadius:10,
+        backgroundColor: "#DCDCDC",
     },
     //  O pai de todos e todas
     paidetodos:{
-        flex: 1,
-        // alignItems: "center",
-        // justifyContent: "space-between"
+        height: "100%",
+        alignItems: "center",
+        justifyContent: "space-around",
     },
 })

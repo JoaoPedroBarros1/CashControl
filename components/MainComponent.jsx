@@ -6,8 +6,9 @@ import {css} from '../styles/StyleFile1'
 function MainComponent ({ navigation }){
     return (
         <View style={css.divmain}>
+            <Image style={css.imglogo2} source={require('../assets/logo_com_nome.png')}></Image>
+            <Text style={css.txtnome}>Gustavo Henrique Coca da Silva</Text>
             <View style={css.nomeagencia}>
-                <Text style={css.txt}>Gustavo Henrique</Text>
                 <Text style={css.txt}>Agência **02</Text>
                 <Text style={css.txt}>Conta **48-0</Text>
                 <FontAwesomeIcon icon={faChevronDown} size={20} />

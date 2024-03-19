@@ -1,31 +1,28 @@
 import React from 'react';
-import {StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import {StyleSheet, SafeAreaView, ScrollView, View} from 'react-native';
 
 import HeaderComponent from "../components/HeaderComponent";
-import BalanceComponent from "./DashboardComponents/BalanceComponent";
-import TransactionComponent from "./DashboardComponents/TransactionComponent";
-import GraphicComponent from "./DashboardComponents/GraphicComponent";
+import BalanceComponent from "../components/DashboardComponents/BalanceComponent";
+import TransactionComponent from "../components/DashboardComponents/TransactionComponent";
+import GraphicComponent from "../components/DashboardComponents/GraphicComponent";
 
 
 export default function ({ navigation }) {
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={{ flex: 1}}>
             <HeaderComponent />
-            <ScrollView contentContainerStyle={styles.scrollContainer}>
+            {/* É pra ser uma scrollView, mas não pode ser pai de uma FlatList */}
+            <View contentContainerStyle={styles.scrollContainer}>
                 <BalanceComponent />
                 <TransactionComponent navigation={navigation} />
                 <GraphicComponent />
-
-            </ScrollView>
+            </View>
         </SafeAreaView>
     )
 }
 
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
     scrollContainer: {
         flexGrow: 1,
         justifyContent: 'flex-start',

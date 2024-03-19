@@ -1,24 +1,17 @@
-import React from 'react';
-import {Button, SafeAreaView, StyleSheet, Text} from 'react-native';
+import {SafeAreaView} from 'react-native';
+import FooterComponent from "../components/FooterComponent";
+import MainComponent from "../components/MainComponent";
+import HeaderComponent from "../components/HeaderComponent";
+import {css} from "../styles/StyleFile1"
 
-export default function ({ navigation }) {
-    return (
-        <SafeAreaView style={css.container}>
-            <Text>Home</Text>
-
-            <Button
-                title="Ir para dashboard"
-                onPress={() => navigation.navigate('Dashboard')}
-            />
+function Home({ navigation }){
+    return(
+        <SafeAreaView>
+            <HeaderComponent />
+            <MainComponent navigation={navigation} />
+            <FooterComponent navigation={navigation} />
         </SafeAreaView>
-    );
+    )
 }
 
-
-const css = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-});
+export default Home

@@ -47,7 +47,7 @@ export default function ({navigation, pageName, globalValue, setGlobalValue}) {
 
                 <View>
                     <Text>Data</Text>
-                    <RNDateTimePicker value={data}
+                    <RNDateTimePicker value={data} />
                     {/*<DatePicker date={data} onDateChange={setData} />*/}
                     {/*<TextInput*/}
                     {/*    value={data.toString()}*/}

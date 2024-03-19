@@ -1,4 +1,6 @@
 import React, {useState} from "react"
+import {SafeAreaView} from "react-native";
+
 import {createStackNavigator} from '@react-navigation/stack'
 import {NavigationContainer} from '@react-navigation/native'
 

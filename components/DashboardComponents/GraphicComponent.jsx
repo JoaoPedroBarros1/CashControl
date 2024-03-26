@@ -7,12 +7,7 @@ export default function () {
     const {receitas, despesas} = useContext(Dados)
 
     const pieData = [
-        {
-            value: 47,
-            color: '#009FFF',
-            gradientCenterColor: '#006DFF',
-            focused: true,
-        },
+        {value: 47, color: '#009FFF', gradientCenterColor: '#006DFF'},
         {value: 40, color: '#93FCF8', gradientCenterColor: '#3BE9DE'},
         {value: 16, color: '#BDB2FA', gradientCenterColor: '#8F80F3'},
         {value: 3, color: '#FFA5BA', gradientCenterColor: '#FF7F97'},
@@ -83,7 +78,7 @@ export default function () {
             style={{
                 paddingVertical: 30,
                 flex: 1,
-                marginBottom: 50
+                marginBottom: 100
             }}>
             <View
                 style={{

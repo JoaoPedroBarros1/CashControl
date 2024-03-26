@@ -12,7 +12,7 @@ export const css = StyleSheet.create({
         marginBottom: 20
     },
     divheader:{
-        marginTop: 10,
+        marginTop: 30,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-around"

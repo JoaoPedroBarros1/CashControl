@@ -1,18 +1,20 @@
 import React, {useState} from 'react';
 import { StyleSheet, View, Text, Button, SafeAreaView, TextInput } from 'react-native';
-import RNDateTimePicker from "@react-native-community/datetimepicker";
+
 
 export default function ({navigation, pageName, globalValue, setGlobalValue}) {
     const [nome, setNome] = useState("")
     const [valor, setValor] = useState("")
-    const [data, setData] = useState(new Date())
 
     function cadastrar() {
+        if (!(nome.length > 0 && parseFloat(valor) > 0)) {
+            return
+        }
+
         let aux = [...globalValue]
         aux.push({
             nome: nome,
-            valor: valor,
-            data: data
+            valor: parseFloat(valor).toFixed(2).toString()
         })
         setGlobalValue(aux)
 
@@ -37,28 +39,17 @@ export default function ({navigation, pageName, globalValue, setGlobalValue}) {
                 <View>
                     <Text>Valor</Text>
                     <TextInput
-                        value={valor.toString()}
+                        value={valor}
                         onChangeText={(e) => setValor(e)}
                         style={css.input}
                         placeholder="Informe o valor"
                         keyboardType="numeric"
                     />
                 </View>
-
-                <View>
-                    <Text>Data</Text>
-                    <RNDateTimePicker value={data} />
-                    {/*<DatePicker date={data} onDateChange={setData} />*/}
-                    {/*<TextInput*/}
-                    {/*    value={data.toString()}*/}
-                    {/*    onChangeText={(e) => setData(e)}*/}
-                    {/*    style={css.input}*/}
-                    {/*    placeholder="Informe a data"*/}
-                    {/*/>*/}
-                </View>
             </View>
 
             <Button title="Cadastrar" onPress={cadastrar} />
+            <Button title="Cancelar" onPress={() => {navigation.navigate("Dashboard")}} />
         </SafeAreaView>
     );
 }

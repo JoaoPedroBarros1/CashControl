@@ -1,27 +1,24 @@
 import {useContext} from "react";
 import {View, Text} from "react-native";
-import {PieChart} from "react-native-gifted-charts";
+import {BarChart} from "react-native-gifted-charts";
 import Dados from "../../context/DadosContext";
 
 export default function () {
     const {despesas} = useContext(Dados)
 
     const pseudoDespesas = [
-        {nome: "A", valor: 1.75},
-        {nome: "B", valor: 5},
-        {nome: "C", valor: 3.5},
-        {nome: "A", valor: 2.25}
+        {nome: "Compras", valor: 1.75},
+        {nome: "Medicamentos", valor: 50},
+        {nome: "Buscopan", valor: 3.5},
+        {nome: "Anana", valor: 2.25}
     ]
 
+    const addValues = () => {
+        let graphicList = []
 
-    const dataGraphic = () => {
-        let graphicList = {}
-
-        pseudoDespesas.forEach(({nome, valor}) => {
-            graphicList[nome] += valor
+        pseudoDespesas.forEach((dict) => {
+            graphicList.push({value: dict.valor, label: dict.nome})
         })
-
-        print(graphicList)
 
         return graphicList
     }
@@ -35,36 +32,37 @@ export default function () {
             }}>
             <View
                 style={{
-                    margin: 20,
-                    padding: 16,
-                    borderRadius: 20,
-                    backgroundColor: '#2196F3',
+                    margin: 20
                 }}>
-                <Text style={{color: 'white', fontSize: 16, fontWeight: 'bold'}}>
-                    Performance
+                <Text style={{color: '#2196F3', fontSize: 16, fontWeight: 'bold'}}>
+                    Despesas
                 </Text>
-                <View style={{padding: 20, alignItems: 'center'}}>
-                    <PieChart
-                        data={dataGraphic}
-                        donut
-                        showGradient
-                        sectionAutoFocus
-                        radius={90}
-                        innerRadius={60}
-                        innerCircleColor={'#2196F3'}
-                        // centerLabelComponent={() => {
-                        //     return (
-                        //         <View style={{justifyContent: 'center', alignItems: 'center'}}>
-                        //             <Text
-                        //                 style={{fontSize: 22, color: 'white', fontWeight: 'bold'}}>
-                        //                 47%
-                        //             </Text>
-                        //             <Text style={{fontSize: 14, color: 'white'}}>Excellent</Text>
-                        //         </View>
-                        //     );
-                        // }}
-                    />
-                </View>
+                <BarChart
+                    data={addValues()}
+                    barBorderTopLeftRadius={5}
+                    barBorderTopRightRadius={5}
+                    showFractionalValues
+                    noOfSections={7}
+                    frontColor={"#2196F3"}
+                    xAxisColor={"#2196F3"}
+                    yAxisColor={"#2196F3"}
+                    xAxisIndicesColor={"#2196F3"}
+                    yAxisIndicesColor={"#2196F3"}
+                    hideRules
+                />
+
+                {/*<PieChart*/}
+                {/*    data={addValues()}*/}
+                {/*    donut*/}
+                {/*    showText*/}
+                {/*    labelsPosition="onBorder"*/}
+                {/*    innerCircleColor={'#2196F3'}*/}
+
+                {/*    textColor="white"*/}
+                {/*    // showTextBackground*/}
+                {/*    // textBackgroundColor="white"*/}
+                {/*    // textBackgroundRadius={22}*/}
+                {/*/>*/}
             </View>
         </View>
     )

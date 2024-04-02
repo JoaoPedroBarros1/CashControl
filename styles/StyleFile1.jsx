@@ -68,18 +68,14 @@ export const css = StyleSheet.create({
     btnatalho1:{
         alignItems: "center",
         padding: 10,
-        borderWidth: 3,
-        borderColor: "#29b063",
         borderRadius:10,
-        backgroundColor: "#2ecc71",
+        backgroundColor: "#3CB371",
     },
     btnatalho2:{
         alignItems: "center",
         padding: 10,
-        borderWidth: 3,
-        borderColor: "#d74638",
         borderRadius:10,
-        backgroundColor: "#e74c3c",
+        backgroundColor: "#e36758",
     },
     //  O pai de todos e todas
     paidetodos:{

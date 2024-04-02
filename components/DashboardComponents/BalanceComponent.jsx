@@ -43,7 +43,7 @@ export default function () {
                     <NetGainComponent value={netGain} />
                 </View>
 
-                <View style={[styles.transactionContainer, { backgroundColor: '#82ca9d', gap: 20, justifyContent: "flex-start" }]}>
+                <View style={[styles.transactionContainer, { backgroundColor: '#82ca9d', gap: 40, justifyContent: "flex-start" }]}>
                     <View>
                         <FontAwesomeIcon color="whitesmoke" icon={faMoneyBillTrendUp} size={100} />
                     </View>
@@ -53,7 +53,7 @@ export default function () {
                     </View>
                 </View>
 
-                <View style={[styles.transactionContainer, { backgroundColor: '#f58a8a', gap: 20, justifyContent: "flex-start" }]}>
+                <View style={[styles.transactionContainer, { backgroundColor: '#f58a8a', gap: 40, justifyContent: "flex-start" }]}>
                     <View>
                         <FontAwesomeIcon color="whitesmoke" icon={faHandHoldingDollar} size={100} />
                     </View>

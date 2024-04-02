@@ -6,17 +6,10 @@ import Dados from "../../context/DadosContext";
 export default function () {
     const {despesas} = useContext(Dados)
 
-    const pseudoDespesas = [
-        {nome: "Compras", valor: 1.75},
-        {nome: "Medicamentos", valor: 50},
-        {nome: "Buscopan", valor: 3.5},
-        {nome: "Anana", valor: 2.25}
-    ]
-
     const addValues = () => {
         let graphicList = []
 
-        pseudoDespesas.forEach((dict) => {
+        despesas.forEach((dict) => {
             graphicList.push({value: dict.valor, label: dict.nome})
         })
 
@@ -42,7 +35,6 @@ export default function () {
                     barBorderTopLeftRadius={5}
                     barBorderTopRightRadius={5}
                     showFractionalValues
-                    noOfSections={7}
                     frontColor={"#2196F3"}
                     xAxisColor={"#2196F3"}
                     yAxisColor={"#2196F3"}
@@ -50,19 +42,6 @@ export default function () {
                     yAxisIndicesColor={"#2196F3"}
                     hideRules
                 />
-
-                {/*<PieChart*/}
-                {/*    data={addValues()}*/}
-                {/*    donut*/}
-                {/*    showText*/}
-                {/*    labelsPosition="onBorder"*/}
-                {/*    innerCircleColor={'#2196F3'}*/}
-
-                {/*    textColor="white"*/}
-                {/*    // showTextBackground*/}
-                {/*    // textBackgroundColor="white"*/}
-                {/*    // textBackgroundRadius={22}*/}
-                {/*/>*/}
             </View>
         </View>
     )

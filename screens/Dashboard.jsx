@@ -10,7 +10,7 @@ import GraphicComponent from "../components/DashboardComponents/GraphicComponent
 export default function ({ navigation }) {
     return (
         <SafeAreaView>
-            <HeaderComponent />
+            <HeaderComponent navigation={navigation} />
             <FlatList
                 ListHeaderComponent={BalanceComponent}
                 ListFooterComponent={GraphicComponent}

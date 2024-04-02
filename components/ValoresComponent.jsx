@@ -48,8 +48,10 @@ export default function ({navigation, pageName, globalValue, setGlobalValue}) {
                 </View>
             </View>
 
-            <Button title="Cadastrar" onPress={cadastrar} />
-            <Button title="Cancelar" onPress={() => {navigation.navigate("Dashboard")}} />
+            <View style={{flexDirection: "row", justifyContent: "space-between", gap: 20}}>
+                <Button title="Cadastrar" onPress={cadastrar} />
+                <Button title="Cancelar" onPress={() => {navigation.navigate("Dashboard")}} />
+            </View>
         </SafeAreaView>
     );
 }

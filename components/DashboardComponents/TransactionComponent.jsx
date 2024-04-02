@@ -11,6 +11,12 @@ const OpacityButton = ({ title, onPress }) => {
     );
 };
 
+const EmptyComponent = ({ texto }) => {
+    return (
+        <Text>Ainda não há {texto}</Text>
+    )
+}
+
 
 export default function ({ navigation }) {
     const {receitas, despesas} = useContext(Dados)
@@ -28,6 +34,7 @@ export default function ({ navigation }) {
             <View style={styles.transactionListContainer}>
                 <Text style={styles.transactionTitle}>Receitas</Text>
                 <FlatList
+                    ListEmptyComponent={<EmptyComponent texto="receitas" />}
                     data={receitas}
                     renderItem={({ item }) => (
                         <View style={styles.transactionItem}>
@@ -42,6 +49,7 @@ export default function ({ navigation }) {
             <View style={styles.transactionListContainer}>
                 <Text style={styles.transactionTitle}>Despesas</Text>
                 <FlatList
+                    ListEmptyComponent={<EmptyComponent texto="despesas" />}
                     data={despesas}
                     renderItem={({ item }) => (
                         <View style={styles.transactionItem}>

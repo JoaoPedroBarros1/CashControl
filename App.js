@@ -1,17 +1,16 @@
 import React, {useState} from "react"
-import {SafeAreaView} from "react-native";
 
-import {createStackNavigator} from '@react-navigation/stack'
 import {NavigationContainer} from '@react-navigation/native'
+import {createStackNavigator} from "@react-navigation/stack";
 
 import Home from './screens/Home'
 import Despesas from './screens/Despesas'
 import Receitas from './screens/Receitas'
-import Dashboard from "./screens/Dashboard";
+import Dashboard from "./screens/Dashboard"
 
 import Dados from './context/DadosContext'
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
 
 export default function() {

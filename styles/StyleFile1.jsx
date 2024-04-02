@@ -12,10 +12,12 @@ export const css = StyleSheet.create({
         marginBottom: 20
     },
     divheader:{
+        paddingHorizontal: 50,
         marginTop: 30,
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "space-around"
+        justifyContent: "center"
+        // justifyContent: "space-between"
     },
 
     //  INICIO DA MAIN
@@ -66,18 +68,18 @@ export const css = StyleSheet.create({
     btnatalho1:{
         alignItems: "center",
         padding: 10,
-        borderWidth: 1,
-        borderColor: "black",
+        borderWidth: 3,
+        borderColor: "#29b063",
         borderRadius:10,
-        backgroundColor: "#DCDCDC",
+        backgroundColor: "#2ecc71",
     },
     btnatalho2:{
         alignItems: "center",
         padding: 10,
-        borderWidth: 1,
-        borderColor: "black",
+        borderWidth: 3,
+        borderColor: "#d74638",
         borderRadius:10,
-        backgroundColor: "#DCDCDC",
+        backgroundColor: "#e74c3c",
     },
     //  O pai de todos e todas
     paidetodos:{

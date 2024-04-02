@@ -7,7 +7,7 @@ import HeaderComponent from "../components/HeaderComponent";
 function Home({ navigation }){
     return(
         <SafeAreaView style={{ flex: 1 }}>
-            <HeaderComponent />
+            <HeaderComponent navigation={navigation} />
             <MainComponent navigation={navigation} />
             <FooterComponent navigation={navigation} />
         </SafeAreaView>

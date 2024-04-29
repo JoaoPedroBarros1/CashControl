@@ -43,3 +43,6 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+flask/.idea
+flask/__pycache__

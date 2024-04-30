@@ -1,7 +1,7 @@
 import {useContext} from "react";
 import {View, Text} from "react-native";
 import {BarChart} from "react-native-gifted-charts";
-import Dados from "../../context/DadosContext";
+import {Dados} from "../../context/DadosContext";
 
 export default function () {
     const {despesas} = useContext(Dados)

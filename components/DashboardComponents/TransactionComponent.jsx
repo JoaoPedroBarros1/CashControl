@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {View, Text, FlatList, TouchableOpacity, StyleSheet } from "react-native";
-import Dados from "../../context/DadosContext";
+import {Dados} from "../../context/DadosContext";
 
 
 const OpacityButton = ({ title, onPress }) => {

@@ -24,13 +24,13 @@ DROP TABLE IF EXISTS `despesa`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `despesa` (
   `id_despesa` int(11) NOT NULL AUTO_INCREMENT,
-  `id_usuario` int(11) NOT NULL,
+--  `id_usuario` int(11) NOT NULL,
   `nome` varchar(255) DEFAULT NULL,
   `data_emissao` date DEFAULT NULL,
   `valor_despesa` decimal(10,2) NOT NULL,
-  PRIMARY KEY (`id_despesa`),
-  KEY `id_usuario` (`id_usuario`),
-  CONSTRAINT `despesa_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`)
+  PRIMARY KEY (`id_despesa`)
+--  KEY `id_usuario` (`id_usuario`),
+--  CONSTRAINT `despesa_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -52,13 +52,13 @@ DROP TABLE IF EXISTS `receita`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `receita` (
   `id_receita` int(11) NOT NULL AUTO_INCREMENT,
-  `id_usuario` int(11) NOT NULL,
+--  `id_usuario` int(11) NOT NULL,
   `nome` varchar(255) DEFAULT NULL,
   `data_emissao` date DEFAULT NULL,
   `valor_receita` decimal(10,2) NOT NULL,
-  PRIMARY KEY (`id_receita`),
-  KEY `id_usuario` (`id_usuario`),
-  CONSTRAINT `receita_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`)
+  PRIMARY KEY (`id_receita`)
+--  KEY `id_usuario` (`id_usuario`),
+--  CONSTRAINT `receita_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

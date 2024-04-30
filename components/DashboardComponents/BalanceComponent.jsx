@@ -2,7 +2,7 @@ import {useContext} from "react";
 import {View, StyleSheet, Text} from "react-native";
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 import {faHandHoldingDollar, faMoneyBillTransfer, faMoneyBillTrendUp, faArrowUp, faArrowDown, faEquals} from "@fortawesome/free-solid-svg-icons";
-import Dados from "../../context/DadosContext";
+import {Dados} from "../../context/DadosContext";
 
 
 const NetGainComponent = ({value}) => {

@@ -8,17 +8,14 @@ import Despesas from './screens/Despesas'
 import Receitas from './screens/Receitas'
 import Dashboard from "./screens/Dashboard"
 
-import Dados from './context/DadosContext'
+import {DadosProvider} from "./context/DadosContext";
 
 const Stack = createStackNavigator()
 
 
 export default function() {
-    const [receitas, setReceitas] = useState([])
-    const [despesas, setDespesas] = useState([])
-
     return (
-        <Dados.Provider value={{receitas, setReceitas, despesas, setDespesas}}>
+        <DadosProvider>
             <NavigationContainer>
                 <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Home">
                     <Stack.Screen name="Home" component={Home} />
@@ -27,6 +24,6 @@ export default function() {
                     <Stack.Screen name="Receitas" component={Receitas} />
                 </Stack.Navigator>
             </NavigationContainer>
-        </Dados.Provider>
+        </DadosProvider>
     )
 }

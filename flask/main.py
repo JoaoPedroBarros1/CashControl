@@ -8,7 +8,7 @@ db = SQLAlchemy(app)
 
 
 from view import *
-from models import Usuario, Receita, Despesa
+from models import Receita, Despesa
 
 
 if __name__ == '__main__':
